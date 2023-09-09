@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<!-- data-weui-theme="dark" 切换刀dark模式 -->
+<view style="height: 100%;">
+  <view class="top-header">
+<!-- 顶部错误提示 -->
+  <!-- <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips> -->
+    <view class="connect-btn mar-top-40" bindtap="connectBtn">
+      <!-- 夜韵儿玩具 -->
+      连接开关 <text class="{{connectState ? 'green' : 'gray'}}">(◉{{connectData}})</text>
+    </view>
+  </view>
+  <view class="menu">
+    <!-- 我这里是菜单 -->
+    <view class="menu-btn menu-btn1" bindtap="writeFn" data-value="0xff00">
+      <view>
+          <image src="/assets/switch.png" style="width: 120rpx;height: 120rpx;"></image>
+          <view style="text-align: center;">
+            <text>开关 \n switch</text>
+          </view>
+      </view>
+    </view>
+    <view class="menu-btn menu-btn2" bindtap="writeFn" data-value="0xf00f">
+      <view>
+          <image src="/assets/hz.png" style="width: 120rpx;height: 120rpx;"></image>
+          <view style="text-align: center;">
+            <text>频率 \n hz</text>
+          </view>
+      </view>
+    </view>
+    <view class="menu-btn menu-btn3" bindtap="writeFn" data-value="0x0ff0">
+      <view>
+          <image src="/assets/heating.png" style="width: 120rpx;height: 120rpx;"></image>
+          <view style="text-align: center;">
+            <text>加热 \n heating</text>
+          </view>
+      </view>
+    </view>
+    <view class="menu-btn menu-btn4" bindtap="shakBtn" data-value="0xaa55">
+      <view>
+          <image src="/assets/my.png" style="width: 120rpx;height: 120rpx;"></image>
+          <view style="text-align: center;">
+            <text>震动 \n shake</text>
+          </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="help">
+      <navigator url="/pages/help/help">连接不上？前往查看帮助</navigator>
+  </view>
+  <!-- 震动容器 -->
+  <!-- <view class="{{shakState ? 'open' : 'close'}}">
+      <view class="shak_icon">
+        <image class="shak_img" src="/assets/shak.png"/>
+        <text>摇一摇模式</text>
+      <button bindtap="shakClose">关闭震动</button>
+
+      </view>
+    </view> -->
+    <view class="{{shakState ? 'open' : 'close'}}">
+      <view class="shak_icon">
+        <image class="shak_img" src="/assets/shak.png"/>
+        <text>摇一摇模式</text>
+      <button  bindtap="shakBtn" data-value="0x55aa">关闭震动</button>
+
+      </view>
+    </view>
+</view>

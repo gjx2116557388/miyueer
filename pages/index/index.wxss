@@ -1,0 +1,137 @@
+.top-header{
+  position: relative;
+  /* display: flex;
+  justify-content: center; */
+  color: #FFF;
+  /* background: #FD637E; */
+  background-image: url("https://www.lovelilin.com/images/miyueerbanner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400rpx;
+  padding-left: 30rpx;
+  padding-top: 15rpx;
+}
+.hi{
+  font-weight: bold;
+  font-size: 20px;
+}
+.mar-top-40{
+  margin-top: 40rpx;
+}
+.connect-btn{
+  height: 50rpx;
+  width: 400rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border: 5rpx solid #E7E7E7;
+  /* background: #E87188; */
+  background: linear-gradient(to right, #fc555d, #f75493);
+  display: inline-block;
+  border-radius:30rpx;
+  position: absolute;
+  bottom: 100rpx;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+}
+.green{
+  color: green;
+}
+.gray{
+  color: gray;
+}
+.menu{
+  /* 防止定位跟弹性布局冲突所以显式加一个宽度 */
+  width: 100%;
+  position: relative;
+  top: -55rpx;
+  border-top-left-radius:60rpx;
+  /* border-top-right-radius:11%; */
+  height: 100%;
+  background: #fff;
+  /* background: #000; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.menu-btn{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius:20%;
+  border: 1rpx solid #c9c9c9;
+  /* box-shadow: 0 2rpx 4rpx #00000014; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25rpx 25rpx 0 25rpx;
+  color: #FFF;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+  /* opacity: .7; */
+}
+.menu-btn1{
+  background: #73B8F9 ;
+}
+.menu-btn2{
+  background: #FFAD93;
+}
+.menu-btn3{
+  background: #f87f71;
+}
+.menu-btn4{
+  /* background: #fa9c50; */
+  background-color: #FFA490;
+}
+.open{
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 100vh; /* 可根据需要设置容器高度 */
+}
+
+.close{
+  display: none;
+}
+.shak_icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #DEDFDE;
+}
+
+.shak_img{
+  height: 200rpx;
+  width: 200rpx;
+  transform-origin: bottom center;
+  animation: rotate 0.1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+.help{
+  color: #83bceb;
+  font-size: 35rpx;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 30rpx;
+}
