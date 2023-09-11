@@ -93,7 +93,8 @@
   height: 100vh; /* 可根据需要设置容器高度 */
 }
 
-.close{
+/* 震动弹出部分 */
+/* .close{
   display: none;
 }
 .shak_icon{
@@ -101,16 +102,16 @@
   flex-direction: column;
   align-items: center;
   color: #DEDFDE;
-}
+} */
 
-.shak_img{
+/* .shak_img{
   height: 200rpx;
   width: 200rpx;
   transform-origin: bottom center;
   animation: rotate 0.1s linear infinite;
-}
+} */
 
-@keyframes rotate {
+/* @keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -126,7 +127,7 @@
   100% {
     transform: rotate(-10deg);
   }
-}
+} */
 .help{
   color: #83bceb;
   font-size: 35rpx;

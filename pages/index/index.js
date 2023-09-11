@@ -72,7 +72,7 @@ Page({
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
     connectData:'未连接',
     connectState:false,
-    shakState: false, //震动的状态
+    // shakState: false, //震动的状态
     //测试数据
     //蓝牙信息
     // 测试硬件 红米蓝牙耳机 Redmi Buds 3
@@ -205,25 +205,26 @@ Page({
   },
 
   // 点击发码版本
-  shakBtn(e){
-    let shakData = this.data.shakState;
-    let value = e
-    // 判断是否授权蓝牙功能
-    this.authorizationFn()
+  // 因为震动页面已经取消
+  // shakBtn(e){
+  //   // let shakData = this.data.shakState;
+  //   let value = e
+  //   // 判断是否授权蓝牙功能
+  //   this.authorizationFn()
 
-    wx.vibrateShort({
-      success: function() {
-        console.log("短震动成功");
-      },
-      fail: function() {
-        console.log("短震动失败");
-      }
-    });
-    this.setData({
-      shakState: !shakData,
-    });
-    this.writeFn(value)
-  },
+  //   wx.vibrateShort({
+  //     success: function() {
+  //       console.log("短震动成功");
+  //     },
+  //     fail: function() {
+  //       console.log("短震动失败");
+  //     }
+  //   });
+  //   // this.setData({
+  //   //   shakState: !shakData,
+  //   // });
+  //   this.writeFn(value)
+  // },
 
 
   // 搜索蓝牙方法

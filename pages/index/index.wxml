@@ -35,7 +35,7 @@
           </view>
       </view>
     </view>
-    <view class="menu-btn menu-btn4" bindtap="shakBtn" data-value="0xaa55">
+    <view class="menu-btn menu-btn4" bindtap="writeFn" data-value="0xaa55">
       <view>
           <image src="/assets/my.png" style="width: 120rpx;height: 120rpx;"></image>
           <view style="text-align: center;">
@@ -57,12 +57,13 @@
 
       </view>
     </view> -->
-    <view class="{{shakState ? 'open' : 'close'}}">
+    
+    <!-- 震动弹出的部分 -->
+    <!-- <view class="{{shakState ? 'open' : 'close'}}">
       <view class="shak_icon">
         <image class="shak_img" src="/assets/shak.png"/>
         <text>摇一摇模式</text>
-      <button  bindtap="shakBtn" data-value="0x55aa">关闭震动</button>
-
+        <button  bindtap="shakBtn" data-value="0x55aa">关闭震动</button>
       </view>
-    </view>
+    </view> -->
 </view>
