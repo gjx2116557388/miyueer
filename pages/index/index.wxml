@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <!-- data-weui-theme="dark" 切换刀dark模式 -->
-<view style="height: 100%;">
+<view style="height: 100vh;position: relative;">
   <view class="top-header">
 <!-- 顶部错误提示 -->
   <!-- <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips> -->
@@ -45,6 +45,9 @@
     </view>
 
   </view>
+
+  <!-- <view><button bindtap="getPermissions">一键获取权限</button></view> -->
+
   <view class="help">
       <navigator url="/pages/help/help">连接不上？前往查看帮助</navigator>
   </view>

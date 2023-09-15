@@ -3,5 +3,6 @@
   "setting": {
     "compileHotReLoad": true
   },
-  "projectname": "miyueer"
+  "projectname": "miyueer",
+  "libVersion": "3.0.2"
 }

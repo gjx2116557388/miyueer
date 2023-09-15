@@ -137,9 +137,71 @@ Page({
           });
         } else {
           // 蓝牙权限已被授权，进行连接等操作
+          this.localhostFn()
         }
       }
     });
+
+
+
+  },
+// 判断用户是否授权位置信息权限
+localhostFn(){
+    // 判断位置信息权限
+    if (!res.authSetting['scope.userLocation']) {
+      // 用户未授权位置信息权限，需要进行处理
+      // 显示一个提示框或者其他方式告知用户需要位置信息权限
+      wx.showModal({
+        title: '提示',
+        content: '需要位置信息权限才能使用该功能，请授权位置信息权限。',
+        success(res) {
+          if (res.confirm) {
+            // 用户点击确定，跳转到微信小程序的授权设置页面
+            wx.openSetting({
+              success(res) {
+                // 用户在设置页面进行了操作后的回调
+                // 检查位置信息权限是否被重新授权，根据情况进行相应处理
+                if (res.authSetting['scope.userLocation']) {
+                  // 位置信息权限已被重新授权，进行相关操作
+                } else {
+                  // 位置信息权限仍未被授权，可以继续提示用户或进行其他处理
+                }
+              }
+            });
+          } else if (res.cancel) {
+            // 用户点击取消，可以继续提示用户或进行其他处理
+          }
+        }
+      });
+    } else {
+      // 位置信息权限已被授权，进行相关操作
+    }
+},
+
+
+
+  // 震动方法
+  vibrateShort(){
+    // 点击短震动
+    // wx.vibrateShort({
+    //   type: "heavy",
+    //   success: ()=>{
+    //     console.log("短震动成功");
+    //   },
+    //   fail: ()=>{
+    //     console.log("短震动失败");
+    //   }
+    // });
+
+    // 长震动
+    wx.vibrateLong({
+      success: ()=>{
+        console.log("长震动成功");
+      },
+      fail: ()=>{
+        console.log("长震动失败");
+      }
+    })
   },
 
   // 连接按钮
@@ -147,14 +209,8 @@ Page({
     var that = this
     console.log("这里是断开模块",that.data.connectState);
     // 点击震动
-    wx.vibrateShort({
-      success: function() {
-        console.log("短震动成功");
-      },
-      fail: function() {
-        console.log("短震动失败");
-      }
-    });
+    that.vibrateShort()
+
     if (that.data.connectState) {
       console.log("这里是断开模块",that);
       // 断开与蓝牙设备的连接
@@ -441,14 +497,8 @@ Page({
     that.authorizationFn()
 
     // 按钮震动
-    wx.vibrateShort({
-      success: function() {
-        console.log("短震动成功");
-      },
-      fail: function() {
-        console.log("短震动失败");
-      }
-    });
+    that.vibrateShort()
+
     console.log(`这里是发送出去的数据${buffer},${that.data.writeId}`);
   //  setInterval(() => {
     for(var i = 0;i<3;i++){
