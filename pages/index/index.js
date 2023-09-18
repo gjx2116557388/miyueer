@@ -3,6 +3,36 @@
 const app = getApp()
 
 Page({
+// 测试函数
+// demoFn(){
+// console.log("我是大煞笔");
+// },
+timer: null,
+
+onTouchStart1: function(event) {
+  // 开始触摸时启动定时器
+  this.timer = setTimeout(()=>{
+    console.log("自定义长按事件触发");
+    this.writeFn("0xaa00")
+    // 执行相应的逻辑操作
+  }, 1000); // 设置自定义的长按时间，单位为毫秒
+  return false; // 阻止事件冒泡
+},
+
+onTouchStart2: function(event) {
+  // 开始触摸时启动定时器
+  this.timer = setTimeout(()=>{
+    console.log("自定义长按事件触发");
+    this.writeFn("0x55aa")
+    // 执行相应的逻辑操作
+  }, 1000); // 设置自定义的长按时间，单位为毫秒
+},
+
+onTouchEnd: function(event) {
+  // 触摸结束时清除定时器
+  clearTimeout(this.timer);
+},
+
   // 分享给好友
   onShareAppMessage: function () {
     return {
@@ -116,11 +146,11 @@ Page({
           wx.showModal({
             title: '提示',
             content: '需要蓝牙权限才能使用该功能，请授权蓝牙权限。',
-            success(res) {
+            success:(res)=>{
               if (res.confirm) {
                 // 用户点击确定，跳转到微信小程序的授权设置页面
                 wx.openSetting({
-                  success(res) {
+                  success:(res)=>{
                     // 用户在设置页面进行了操作后的回调
                     // 检查蓝牙权限是否被重新授权，根据情况进行相应处理
                     if (res.authSetting['scope.bluetooth']) {
@@ -137,7 +167,7 @@ Page({
           });
         } else {
           // 蓝牙权限已被授权，进行连接等操作
-          this.localhostFn()
+          // this.localhostFn()
         }
       }
     });
@@ -482,10 +512,17 @@ localhostFn(){
   //   console.log(value);
   // },
 
-  writeFn(e){
+  writeFn: function(e){
+    console.log(e,23333333333333333333333);
     var that = this;
+    var order = "";
+    if(e.length){
+      order = e
+    }else{
+      order = e.currentTarget.dataset.value
+    }
     // var order = e.currentTarget.dataset.value;
-    var order = e.currentTarget.dataset.value;
+    // var order = e.currentTarget.dataset.value;
     const buffer = new ArrayBuffer(2);
     const dataView = new DataView(buffer);
     // dataView.setUint8(0, 0x0f); // 设置第一个字节为 00001111
