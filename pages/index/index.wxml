@@ -5,7 +5,7 @@
 <!-- 顶部错误提示 -->
   <!-- <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips> -->
     <view class="connect-btn mar-top-40" bindtap="connectBtn">
-      <!-- 夜韵儿玩具 -->
+      <!-- 蜜悦儿玩具 -->
       连接开关 <text class="{{connectState ? 'green' : 'gray'}}">(◉{{connectData}})</text>
     </view>
   </view>
@@ -19,7 +19,7 @@
           </view>
       </view>
     </view>
-    <view class="menu-btn menu-btn2" bindtap="writeFn" data-value="0xf00f">
+    <view class="menu-btn menu-btn2" bindtap="writeFn" data-value="0xf00f" bindtouchstart="onTouchStart1" bindtouchend="onTouchEnd">
       <view>
           <image src="/assets/hz.png" style="width: 120rpx;height: 120rpx;"></image>
           <view style="text-align: center;">
@@ -35,7 +35,7 @@
           </view>
       </view>
     </view>
-    <view class="menu-btn menu-btn4" bindtap="writeFn" data-value="0xaa55">
+    <view class="menu-btn menu-btn4" bindtap="writeFn" bindtouchstart="onTouchStart2"  bindtouchend="onTouchEnd" data-value="0xaa55">
       <view>
           <image src="/assets/my.png" style="width: 120rpx;height: 120rpx;"></image>
           <view style="text-align: center;">
